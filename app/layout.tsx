@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     default: 'Morten Bruun',
     template: '%s | Morten Bruun'
   },
-  description: 'Personal website and blog of Morten Bruun.'
+  description: 'Danish founder and builder based in New York. Co-Founder of FlashDocs (acq. by Hebbia). Forbes 30 under 30. Ex-McKinsey, Ex-Google.'
 };
 
 export default function RootLayout({
