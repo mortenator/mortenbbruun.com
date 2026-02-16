@@ -33,7 +33,7 @@ function CardGrid({ items }: { items: CardItem[] }) {
       <div className="grid sm:grid-cols-2 gap-px bg-border">
         {items.map((item, i) => {
           const inner = (
-            <div className="group bg-background p-5 transition-colors hover:bg-muted/30">
+            <div className="group bg-background p-5 transition-colors hover:bg-muted/30 h-full">
               <div className="flex justify-between items-start">
                 <div className="space-y-1.5 min-w-0 flex-1">
                   <h3 className="text-sm font-medium">
@@ -66,18 +66,18 @@ function CardGrid({ items }: { items: CardItem[] }) {
             const isExternal = item.href.startsWith('http');
             if (isExternal) {
               return (
-                <a key={i} href={item.href} target="_blank" rel="noopener noreferrer">
+                <a key={i} href={item.href} target="_blank" rel="noopener noreferrer" className="block h-full">
                   {inner}
                 </a>
               );
             }
             return (
-              <Link key={i} href={item.href}>
+              <Link key={i} href={item.href} className="block h-full">
                 {inner}
               </Link>
             );
           }
-          return <div key={i}>{inner}</div>;
+          return <div key={i} className="h-full">{inner}</div>;
         })}
         {items.length % 2 !== 0 && (
           <div className="hidden sm:block bg-background" />
@@ -93,8 +93,8 @@ export default function Home() {
       {/* 01 - Hero */}
       <section className="space-y-4">
         <SectionHeader number="01" />
-        <h1 className="text-4xl sm:text-5xl font-medium tracking-tight">
-          Hey, I&apos;m <span className="font-serif italic">Morten Bruun</span>
+        <h1 className="text-4xl sm:text-5xl font-serif tracking-tight">
+          Hey, I&apos;m <span className="italic">Morten Bruun</span>
         </h1>
         <p className="font-mono text-sm text-muted-foreground tracking-wide">
           Danish founder and builder based in New York.
@@ -111,6 +111,7 @@ export default function Home() {
               role: 'MTS, Product',
               description:
                 'Building AI for finance. Backed by a16z, Index, Google Ventures, Peter Thiel, and more.',
+              badge: '2025 - Present',
               href: 'https://hebbia.ai',
             },
             {
@@ -135,6 +136,7 @@ export default function Home() {
               role: 'SVP Revenue',
               description:
                 'Scaled the North American business from launch to enterprise. Went from MD to SVP in three years.',
+              badge: '2020 - 2024',
               href: 'https://worksome.com',
             },
             {
@@ -156,6 +158,7 @@ export default function Home() {
               role: '30 under 30',
               description:
                 'Finance - Class of 2019.',
+              badge: 'Class of 2019',
             },
           ]}
         />
@@ -169,14 +172,17 @@ export default function Home() {
             {
               title: 'London School of Economics',
               description: 'MSc Management',
+              badge: '2017 - 2019',
             },
             {
               title: 'Wharton',
               description: 'Business Analytics',
+              badge: '2015 - 2016',
             },
             {
               title: 'Copenhagen Business School',
               description: 'BSc Business Administration & Organizational Communication',
+              badge: '2012 - 2015',
             },
           ]}
         />
@@ -190,6 +196,7 @@ export default function Home() {
             {
               title: 'Hello World',
               description: 'My first blog post.',
+              badge: 'Blog',
               href: '/blog/hello-world',
             },
           ]}
