@@ -50,7 +50,7 @@ export default function RootLayout({
         <Providers>
           <div className="min-h-screen flex flex-col">
             <Header />
-            <main className="flex-1 max-w-4xl mx-auto w-full px-6 py-12 md:py-16">
+            <main className="flex-1 max-w-4xl mx-auto w-full px-4 sm:px-6 py-8 sm:py-12 md:py-16">
               {children}
             </main>
             <Footer />
@@ -65,7 +65,7 @@ export default function RootLayout({
 function Header() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-background/60 border-b border-border/40">
-      <div className="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
         <Link href="/" className="font-serif italic text-lg text-foreground">
           MB
         </Link>

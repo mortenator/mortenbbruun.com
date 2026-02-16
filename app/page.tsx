@@ -33,7 +33,7 @@ function CardGrid({ items }: { items: CardItem[] }) {
       <div className="grid sm:grid-cols-2 gap-px bg-border">
         {items.map((item, i) => {
           const inner = (
-            <div className="group bg-background p-5 transition-colors hover:bg-muted/30 h-full">
+            <div className="group bg-background p-4 sm:p-5 transition-colors hover:bg-muted/30 h-full">
               <div className="flex justify-between items-start">
                 <div className="space-y-1.5 min-w-0 flex-1">
                   <h3 className="text-sm font-medium">
@@ -46,7 +46,7 @@ function CardGrid({ items }: { items: CardItem[] }) {
                       </span>
                     )}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed break-words">
                     {item.description}
                   </p>
                   {item.badge && (
@@ -89,7 +89,7 @@ function CardGrid({ items }: { items: CardItem[] }) {
 
 export default function Home() {
   return (
-    <div className="space-y-16">
+    <div className="space-y-10 sm:space-y-16">
       {/* 01 - Hero */}
       <section className="space-y-4">
         <SectionHeader number="01" />
