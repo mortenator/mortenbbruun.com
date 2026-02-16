@@ -12,13 +12,13 @@ export function ThemeToggle() {
   }, []);
 
   if (!mounted) {
-    return <button className="w-9 h-9" aria-label="Toggle theme" />;
+    return <button className="w-8 h-8" aria-label="Toggle theme" />;
   }
 
   return (
     <button
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors"
+      className="p-1.5 rounded-md text-muted-foreground hover:text-foreground transition-colors"
       aria-label="Toggle theme"
     >
       {theme === 'dark' ? (
@@ -28,7 +28,7 @@ export function ThemeToggle() {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-5 h-5"
+          className="w-[18px] h-[18px]"
         >
           <path
             strokeLinecap="round"
@@ -43,7 +43,7 @@ export function ThemeToggle() {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-5 h-5"
+          className="w-[18px] h-[18px]"
         >
           <path
             strokeLinecap="round"
