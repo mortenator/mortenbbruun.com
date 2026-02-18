@@ -108,10 +108,10 @@ export default function Home() {
           items={[
             {
               title: 'Hebbia',
-              role: 'MTS, Product',
+              role: 'Member of Technical Staff',
               description:
                 'Building AI for finance. Backed by a16z, Index, Google Ventures, Peter Thiel, and more.',
-              badge: '2025 - Present',
+              badge: 'Product',
               href: 'https://hebbia.ai',
             },
             {
