@@ -18,9 +18,11 @@ There are no test or lint commands configured.
 
 **Homepage** (`app/page.tsx`): A React component with numbered sections (01-05) and a 2-column card grid layout. Not MDX — uses custom `SectionHeader` and `CardGrid` components defined inline.
 
-**Blog posts**: MDX files at `app/blog/[slug]/page.mdx`. Adding a new post means creating a directory under `app/blog/` with a `page.mdx` file — routing is automatic.
+**Blog posts**: MDX files at `app/blog/[slug]/page.mdx`. Adding a new post means creating a directory under `app/blog/` with a `page.mdx` file — routing is automatic. Each post exports `metadata` with `title`, `description`, and `alternates.canonical`. Also add the post to the `CardGrid` in the Writing section of `app/page.tsx`.
 
-**MDX configuration**: Uses the experimental Rust-based MDX compiler (`mdxRs` in next.config.ts). This means rehype/remark plugins are NOT supported. Component styling is in `mdx-components.tsx`.
+**Blog layout** (`app/blog/layout.tsx`): Wraps all blog content in `<article className="space-y-6">` for vertical rhythm between paragraphs, headings, and other block elements. No `@tailwindcss/typography` prose plugin — spacing comes from this parent wrapper, following the leerob.io pattern.
+
+**MDX configuration**: Uses the experimental Rust-based MDX compiler (`mdxRs` with `gfm` type in next.config.ts). This means rehype/remark plugins are NOT supported. Component styling is in `mdx-components.tsx`. Code highlighting uses `sugar-high`.
 
 ## Design System
 
@@ -36,11 +38,13 @@ There are no test or lint commands configured.
 ## Key Files
 
 - `app/layout.tsx` — Root layout, header (sticky with social icons), footer, font loading, metadata
-- `app/page.tsx` — Homepage with all sections and card data
+- `app/page.tsx` — Homepage with all sections and card data (SectionHeader, CardGrid defined inline)
+- `app/blog/layout.tsx` — Blog article wrapper with `space-y-6` vertical rhythm
 - `app/globals.css` — Design tokens, Tailwind v4 `@theme`, base styles, syntax highlighting colors
 - `app/providers.tsx` — ThemeProvider wrapper (client component)
 - `app/theme-toggle.tsx` — Sun/moon toggle (client component, hydration-safe)
 - `mdx-components.tsx` — Styled MDX primitives (headings, links, code blocks, etc.)
+- `app/sitemap.ts` — Auto-generated sitemap from blog directory
 - `next.config.ts` — MDX setup, optional Postgres redirects, Rust MDX compiler
 
 ## Deployment
