@@ -194,6 +194,13 @@ export default function Home() {
         <CardGrid
           items={[
             {
+              title: 'The PM is dead. Long live the PM',
+              description:
+                'The product manager role as we know it is cooked. And that\'s not necessarily a bad thing.',
+              badge: 'Feb 2026',
+              href: '/blog/the-pm-is-dead-long-live-the-pm',
+            },
+            {
               title: 'Hello World',
               description: 'My first blog post.',
               badge: 'Blog',
