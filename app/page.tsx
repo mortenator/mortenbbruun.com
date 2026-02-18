@@ -136,7 +136,7 @@ export default function Home() {
               role: 'SVP Revenue',
               description:
                 'Scaled the North American business from launch to enterprise. Went from MD to SVP in three years.',
-              badge: '2020 - 2024',
+              badge: 'From $0 to $120M GMV',
               href: 'https://worksome.com',
             },
             {
