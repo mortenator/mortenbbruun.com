@@ -194,6 +194,13 @@ export default function Home() {
         <CardGrid
           items={[
             {
+              title: "Customer Discovery Won't Save You",
+              description:
+                "We did everything right at Flashdocs — talked to 40+ customers, signed 10 design partners. Then users got access and almost none of them used it.",
+              badge: 'Mar 2026',
+              href: '/blog/customer-discovery-wont-save-you',
+            },
+            {
               title: 'The PM is dead. Long live the PM',
               description:
                 'The product manager role as we know it is cooked. And that\'s not necessarily a bad thing.',
